@@ -1,7 +1,9 @@
+#include <stdio.h>
 #include <SDL3/SDL_main.h>
 
 #include "config.h"
 #include "gui.h"
+#include "installer.h"
 
 /// @brief メイン関数
 /// @param argc 引数の数
@@ -20,6 +22,24 @@ int main(int argc, char *argv[])
     {
         return 1;
     }
+
+    #ifndef NDEBUG
+    // インストール処理を実行
+    LilInstallResult install_result = lil_install_file(
+        "testdata/sample.txt",
+        "testoutput/destination_file.txt"
+    );
+
+    if (install_result == LIL_INSTALL_OK)
+    {
+        printf("ファイルのコピーに成功しました。\n");
+    }
+    else
+    {
+        printf("ファイルのコピーに失敗しました。エラーコード: %d\n",
+            (int)install_result);
+    }
+    #endif
 
     // GUIを起動
     int result = lil_gui_run(&config);

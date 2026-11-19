@@ -30,6 +30,12 @@ if not exist "%VSDEVCMD%" (
 call "%VSDEVCMD%" -arch=amd64 -host_arch=amd64
 if errorlevel 1 exit /b 1
 
+rem コードページを確認
+chcp
+
+rem UTF-8に再設定
+chcp 65001 >nul
+
 where cl >nul 2>&1
 if errorlevel 1 (
     echo エラー: MSVCコンパイラが見つかりません。
