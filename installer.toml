@@ -1,0 +1,7 @@
+[window]
+title = "TOML Test!"
+width = 640
+height = 400
+
+[theme]
+background_color = [0, 223, 255]
