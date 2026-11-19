@@ -19,6 +19,7 @@ add_executable(lilinstaller
     src/main.c
     src/config.c
     src/gui.c
+    src/installer.c
 )
 
 # SDL3をソースから取得してビルドする
