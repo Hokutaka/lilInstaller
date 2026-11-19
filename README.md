@@ -8,4 +8,4 @@
 
 ## ライセンス
 
-MIT Lisence
+MIT License
