@@ -14,11 +14,6 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
 endif()
 
-# ビルドタイプに応じたコンパイルオプションを設定
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    add_compile_options(-g)
-endif()
-
 # 実行可能ファイルを作成
 add_executable(lilinstaller
     src/main.c
